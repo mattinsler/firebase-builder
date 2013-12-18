@@ -1,4 +1,5 @@
 URL = require 'url'
+path = require 'path'
 
 try
   Firebase = require path.join(process.cwd(), 'node_modules', 'firebase')
@@ -30,7 +31,7 @@ build = (config, callback) ->
   
   auth = parsed.auth
   if auth?
-    a = token.split(':')
+    a = auth.split(':')
     token = a[1] if a.length is 2
   delete parsed.auth
   

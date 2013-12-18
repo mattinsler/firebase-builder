@@ -1,7 +1,9 @@
 (function() {
-  var Firebase, URL, build, err, error, success;
+  var Firebase, URL, build, err, error, path, success;
 
   URL = require('url');
+
+  path = require('path');
 
   try {
     Firebase = require(path.join(process.cwd(), 'node_modules', 'firebase'));
@@ -45,7 +47,7 @@
     }
     auth = parsed.auth;
     if (auth != null) {
-      a = token.split(':');
+      a = auth.split(':');
       if (a.length === 2) {
         token = a[1];
       }
