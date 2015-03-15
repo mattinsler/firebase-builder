@@ -10,7 +10,8 @@ npm install --save firebase firebase-builder
 ## Usage
 
 ```javascript
-var builder = require('firebase-builder');
+var Firebase = require('firebase');
+var builder = require('firebase-builder')(Firebase);
 
 // create a client from a URL
 var client = builder('https://example.firebaseio.com');
